@@ -1,6 +1,8 @@
 import { setToken } from '../utils/auth';
 import { API_URL } from '../env/env';
 
+const API = 'auth';
+
 export default class AuthService {
 
   async login(body) {
@@ -9,7 +11,7 @@ export default class AuthService {
     let message = '';
 
     try {
-      const response = await fetch(`${API_URL}/auth/login`, {
+      const response = await fetch(`${API_URL}/${API}/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
@@ -18,7 +20,7 @@ export default class AuthService {
       if (response.ok) {
         data = await response.json();
         status = response.ok;
-        message = 'Successfully login!';
+        message = `Welcome, ${data.userName}!`;
         setToken(data.accessToken);
       } else {
         message = 'Error login!';
@@ -37,7 +39,7 @@ export default class AuthService {
     let message = '';
 
     try {      
-      const response = await fetch(`${API_URL}/auth/register`, {
+      const response = await fetch(`${API_URL}/${API}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
