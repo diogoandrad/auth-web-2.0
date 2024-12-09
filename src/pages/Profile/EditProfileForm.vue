@@ -3,46 +3,21 @@
   <card>
     <h5 slot="header" class="title">Edit Profile</h5>
     <div class="row">
-      <div class="col-md-5 pr-md-1">
-        <base-input
-          label="Company (disabled)"
-          placeholder="Company"
-          v-model="model.company"
-          disabled
-        >
-        </base-input>
-      </div>
-      <div class="col-md-3 px-md-1">
-        <base-input
-          label="Username"
-          placeholder="Username"
-          v-model="model.username"
-        >
-        </base-input>
-      </div>
-      <div class="col-md-4 pl-md-1">
-        <base-input
-          label="Email address"
-          type="email"
-          placeholder="mike@email.com"
-        >
-        </base-input>
-      </div>
-    </div>
-    <div class="row">
       <div class="col-md-6 pr-md-1">
         <base-input
-          label="First Name"
+          label="Name"
           v-model="model.firstName"
-          placeholder="First Name"
+          placeholder="Name"
+          disabled
         >
         </base-input>
       </div>
       <div class="col-md-6 pl-md-1">
         <base-input
-          label="Last Name"
-          v-model="model.lastName"
-          placeholder="Last Name"
+          label="Email"
+          v-model="model.email"
+          placeholder="Email"
+          disabled
         >
         </base-input>
       </div>
@@ -59,7 +34,11 @@
     </div>
     <div class="row">
       <div class="col-md-4 pr-md-1">
-        <base-input label="City" v-model="model.city" placeholder="City">
+        <base-input
+          label="City"
+          v-model="model.city"
+          placeholder="City"
+        >
         </base-input>
       </div>
       <div class="col-md-4 px-md-1">
@@ -71,11 +50,15 @@
         </base-input>
       </div>
       <div class="col-md-4 pl-md-1">
-        <base-input label="Postal Code" placeholder="ZIP Code"> </base-input>
+        <base-input
+          label="Postal Code"
+          placeholder="ZIP Code"
+        >
+        </base-input>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <base-input>
           <label>About Me</label>
           <textarea
