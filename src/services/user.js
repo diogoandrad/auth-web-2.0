@@ -1,32 +1,35 @@
-import { URL_API_LOCAL } from '../env/env';
+import { API_URL } from '../env/env';
+import { getToken } from '../utils/auth';
+
+const API = 'users';
+const TOKEN = getToken();
 
 export default class UserService {
 
-  async create() {
-    const data = {};
-    const error = '';
+  async getAll() {
+    let data = [];
+    let status = false;
+    let message = '';
 
     try {
-      const response = await fetch(`${URL_API_LOCAL}/users/create`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          password: password,
-        }),
+      const response = await fetch(`${API_URL}/${API}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json', 'Authorization': TOKEN }
       });
-      data = await response.json();
+
       if (response.ok) {
-        
+        data = await response.json();
+        status = response.ok;
+        message = 'Successfully collected users!';
       } else {
-        error = 'Error creating user';
+        message = 'Error getting users!';
       }
-    } catch (err) {
-      error = 'Error connecting server';
+        
+    } catch {
+      message = 'Error connecting server!';
     }
 
-    return { data, error }
+    return { data, message, status }
   }
   
 }
