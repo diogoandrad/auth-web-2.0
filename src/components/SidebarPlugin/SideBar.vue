@@ -8,7 +8,7 @@
     <div class="sidebar-wrapper" id="style-3">
       <div class="logo">
         <a
-          href="#"
+          href="/"
           aria-label="sidebar mini logo"
           class="simple-text logo-mini"
         >
@@ -19,7 +19,7 @@
             />
           </div>
         </a>
-        <a href="#" class="simple-text logo-normal">
+        <a href="/" class="simple-text logo-normal">
           {{ title }}
         </a>
       </div>

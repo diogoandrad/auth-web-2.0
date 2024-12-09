@@ -14,7 +14,7 @@
       </ul> -->
       <div class="copyright">
         © {{ year }} made with <i class="tim-icons icon-heart-2"></i> by
-        <a href="#" target="_blank" rel="noopener">Diogo Andrade</a> for studies.
+        <a href="https://www.linkedin.com/in/diogoalvesandrade/" target="_blank" rel="noopener">Diogo Andrade</a> for studies.
       </div>
     </div>
   </footer>

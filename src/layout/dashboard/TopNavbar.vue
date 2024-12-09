@@ -71,7 +71,7 @@
                 placeholder="SEARCH"
               />
             </modal>
-            <base-dropdown
+            <!-- <base-dropdown
               tag="li"
               :menu-on-right="!$rtl.isRTL"
               title-tag="a"
@@ -111,7 +111,7 @@
               <li class="nav-link">
                 <a href="#" class="nav-item dropdown-item">Another one</a>
               </li>
-            </base-dropdown>
+            </base-dropdown> -->
             <base-dropdown
               tag="li"
               :menu-on-right="!$rtl.isRTL"
