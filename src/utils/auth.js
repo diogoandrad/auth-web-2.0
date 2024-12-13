@@ -1,5 +1,20 @@
+import { jwtDecode } from 'jwt-decode';
+
 export function isAuthenticated() {
-  return !!localStorage.getItem('authToken');
+  const token = getToken();
+
+  if (!token)
+    return false;
+
+  const decodedToken = jwtDecode(token);
+  const currentTime = Date.now() / 1000;
+
+  if (decodedToken.exp < currentTime) {
+    clearToken();
+    return false;
+  }
+
+  return true;
 }
 
 export function getToken() {
