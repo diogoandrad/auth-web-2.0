@@ -8,16 +8,16 @@
       <div class="block block-four"></div>
       <a href="#">
         <img class="avatar" src="img/anime3.png" alt="..." />
-        <h5 class="title">{{ user.fullName }}</h5>
+        <h5 class="title">{{ user.name }}</h5>
       </a>
       <p class="description">
-        {{ user.title }}
+        {{ user.profile }}
       </p>
     </div>
     <p></p>
-    <p class="card-description">
-      {{ user.description }}
-    </p>
+    <!-- <p class="card-description">
+      {{ user.about }}
+    </p> -->
     <div slot="footer" class="button-container">
       <base-button icon round class="btn-facebook">
         <i class="fab fa-facebook"></i>

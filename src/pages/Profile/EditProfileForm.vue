@@ -6,9 +6,8 @@
       <div class="col-md-6 pr-md-1">
         <base-input
           label="Name"
-          v-model="model.firstName"
+          v-model="model.name"
           placeholder="Name"
-          disabled
         >
         </base-input>
       </div>
@@ -17,12 +16,20 @@
           label="Email"
           v-model="model.email"
           placeholder="Email"
-          disabled
         >
         </base-input>
       </div>
     </div>
     <div class="row">
+      <div class="col-md-12">
+        <label>Profile</label>
+        <select class="form-control" v-model="model.profile">
+          <option value="Admin">Admin</option>
+          <option value="Developer">Developer</option>
+        </select>
+      </div>
+    </div>
+    <!-- <div class="row">
       <div class="col-md-12">
         <base-input
           label="Address"
@@ -71,8 +78,8 @@
           </textarea>
         </base-input>
       </div>
-    </div>
-    <base-button slot="footer" type="primary" fill>Save</base-button>
+    </div> -->
+    <button type="button" class="btn btn-primary mt-4" @click="editUser">Save</button>
   </card>
 </template>
 <script>
@@ -85,6 +92,14 @@ export default {
       },
     },
   },
+  data() {
+    return {};
+  },
+  methods: {
+    editUser() {
+      // To do
+    }
+  }
 };
 </script>
 <style></style>

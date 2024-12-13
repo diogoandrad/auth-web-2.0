@@ -28,3 +28,5 @@ export function setToken(token) {
 export function clearToken() {
   localStorage.removeItem('authToken');
 }
+
+export const loggedUserId = jwtDecode(getToken()).userId;
