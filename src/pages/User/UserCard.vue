@@ -7,7 +7,7 @@
       <div class="block block-three"></div>
       <div class="block block-four"></div>
       <a href="#">
-        <img class="avatar" src="img/anime3.png" alt="..." />
+        <img class="avatar" src="/img/male-avatar.png" alt="..." />
         <h5 class="title">{{ user.name }}</h5>
       </a>
       <p class="description">
@@ -18,7 +18,7 @@
     <!-- <p class="card-description">
       {{ user.about }}
     </p> -->
-    <div slot="footer" class="button-container">
+    <!-- <div slot="footer" class="button-container">
       <base-button icon round class="btn-facebook">
         <i class="fab fa-facebook"></i>
       </base-button>
@@ -28,7 +28,7 @@
       <base-button icon round class="btn-google">
         <i class="fab fa-google-plus"></i>
       </base-button>
-    </div>
+    </div> -->
   </card>
 </template>
 <script>

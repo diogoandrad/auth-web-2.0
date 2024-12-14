@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-md-8">
-      <edit-profile-form :model="user"></edit-profile-form>
+      <user-form :model="user" :userLogged="userLogged"></user-form>
     </div>
     <div class="col-md-4">
       <user-card :user="user"></user-card>
@@ -11,14 +11,14 @@
 <script>
 import UserService from '../services/user';
 import { loggedUserId } from '../utils/auth';
-import EditProfileForm from "./Profile/EditProfileForm";
-import UserCard from "./Profile/UserCard";
+import UserForm from "./User/UserForm";
+import UserCard from "./User/UserCard";
 
 const userService = new UserService();
 
 export default {
   components: {
-    EditProfileForm,
+    UserForm,
     UserCard,
   },
   data() {
@@ -29,19 +29,22 @@ export default {
         email: "",
         profile: "",
       },
+      userLogged: false
     };
   },
   methods: {
-    async getUserById() {
-      await userService.getById(loggedUserId)
+    async getUserById(userId) {
+      await userService.getById(userId)
         .then(response => {
           if (response.status)
             this.user = response.data;
         });
     }
   },
-  mounted() {
-    this.getUserById();
+  async mounted() {
+    const userId = this.$route.params.id ?? loggedUserId;
+    await this.getUserById(userId);
+    this.userLogged = this.user.id == loggedUserId;    
   }
 };
 </script>

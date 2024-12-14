@@ -72,7 +72,8 @@
           </base-input>
         </div>
       </div> -->
-      <button type="submit" class="btn btn-primary mt-4">Save</button>
+      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="button" class="btn btn-danger ml-2" :disabled="userLogged" @click.prevent="deleteUser">Delete</button>
     </form>
   </card>
 </template>
@@ -89,6 +90,12 @@ export default {
         return {};
       },
     },
+    userLogged: {
+      type: Boolean,
+      default: () => {
+        return false;
+      },
+    }
   },
   data() {
     return {};
@@ -105,6 +112,20 @@ export default {
             timeout: 2000,
             showClose: false
           });
+        });
+    },
+    async deleteUser() {
+      await userService.delete(this.model.id)
+        .then((response) => {
+          this.$notify({
+            message: response.message,
+            horizontalAlign: "center",
+            verticalAlign: "top",
+            type: response.status ? "success" : "danger",
+            timeout: 2000,
+            showClose: false
+          });
+          if (response.status) this.$router.push('/users');
         });
     }
   }

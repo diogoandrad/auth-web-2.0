@@ -15,6 +15,11 @@
               {{ itemValue(item, column) }}
             </td>
           </template>
+          <td v-if="actionsColumn">
+            <router-link :to="'/user/' + item.id">
+              <i class="tim-icons icon-badge"></i>
+            </router-link>
+          </td>
         </slot>
       </tr>
     </tbody>
@@ -48,6 +53,11 @@ export default {
       type: String,
       default: "",
       description: "<tbody> css classes",
+    },
+    actionsColumn: {
+      type: Boolean,
+      default: false,
+      description: "Show actions column",
     },
   },
   computed: {

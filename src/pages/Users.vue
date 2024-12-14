@@ -6,7 +6,7 @@
           <base-table
             :data="users"
             :columns="columns"
-            thead-classes="text-primary"
+            :actionsColumn="true"
           >
           </base-table>
         </div>
@@ -16,9 +16,9 @@
 </template>
 <script>
 import { BaseTable } from "@/components";
-import UserService from '../../services/user';
+import UserService from '@/services/user';
 
-const tableColumns = ["Name", "Email"];
+const tableColumns = ["Name", "Email", "Profile"];
 const userService = new UserService();
 
 export default {

@@ -12,9 +12,9 @@ const ResetPassword = () =>
 const Dashboard = () =>
   import("@/pages/Dashboard.vue");
 const Users = () =>
-  import("@/pages/Users/Users.vue");
-const Profile = () =>
-  import("@/pages/Profile.vue");
+  import("@/pages/Users.vue");
+const UserProfile = () =>
+  import("@/pages/UserProfile.vue");
 const Notifications = () =>
   import("@/pages/Notifications.vue");
 const Icons = () =>
@@ -59,9 +59,14 @@ const routes = [
         component: Users,
       },
       {
+        path: "user/:id",
+        name: "user",
+        component: UserProfile,
+      },
+      {
         path: "profile",
         name: "profile",
-        component: Profile,
+        component: UserProfile,
       },
       {
         path: "notifications",
