@@ -46,7 +46,7 @@ export default class AuthService {
       });
 
       if (response.ok) {
-        data = await response.json();
+        // data = await response.json();
         status = response.ok;
         message = 'Successfully created!';
       } else {
