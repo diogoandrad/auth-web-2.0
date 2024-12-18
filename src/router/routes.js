@@ -63,11 +63,11 @@ const routes = [
         name: "user",
         component: UserProfile,
       },
-      {
-        path: "profile",
-        name: "profile",
-        component: UserProfile,
-      },
+      // {
+      //   path: "profile",
+      //   name: "profile",
+      //   component: UserProfile,
+      // },
       {
         path: "notifications",
         name: "notifications",

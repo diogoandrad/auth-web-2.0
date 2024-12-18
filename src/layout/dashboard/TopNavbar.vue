@@ -133,7 +133,7 @@
                 <p class="d-lg-none">Log out</p>
               </a>
               <li class="nav-link">
-                <a href="/profile" class="nav-item dropdown-item">Profile</a>
+                <a :href="'/user/' + loggedUserId" class="nav-item dropdown-item">Profile</a>
               </li>
               <!-- <li class="nav-link">
                 <a href="#" class="nav-item dropdown-item">Settings</a>
@@ -153,6 +153,7 @@
 import { CollapseTransition } from "vue2-transitions";
 import Modal from "@/components/Modal";
 import { clearToken } from "../../utils/auth";
+import { loggedUserId } from '@/utils/auth';
 
 export default {
   components: {
@@ -174,6 +175,7 @@ export default {
       showMenu: false,
       searchModalVisible: false,
       searchQuery: "",
+      loggedUserId: loggedUserId
     };
   },
   methods: {

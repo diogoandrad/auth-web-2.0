@@ -29,7 +29,7 @@ export default {
         email: "",
         profile: "",
       },
-      userLogged: false
+      userLogged: true
     };
   },
   methods: {
@@ -42,9 +42,9 @@ export default {
     }
   },
   async mounted() {
-    const userId = this.$route.params.id ?? loggedUserId;
+    const userId = this.$route.params.id;
     await this.getUserById(userId);
-    this.userLogged = this.user.id == loggedUserId;    
+    this.userLogged = this.user.id == loggedUserId;
   }
 };
 </script>

@@ -73,7 +73,7 @@
         </div>
       </div> -->
       <button type="submit" class="btn btn-primary">Save</button>
-      <button type="button" class="btn btn-danger ml-2" :disabled="userLogged" @click.prevent="deleteUser">Delete</button>
+      <button type="button" class="btn btn-danger ml-2" :hidden="userLogged" @click.prevent="deleteUser">Delete</button>
     </form>
   </card>
 </template>
@@ -93,7 +93,7 @@ export default {
     userLogged: {
       type: Boolean,
       default: () => {
-        return false;
+        return true;
       },
     }
   },

@@ -17,6 +17,7 @@
 <script>
 import { BaseTable } from "@/components";
 import UserService from '@/services/user';
+import { loggedUserId } from '@/utils/auth';
 
 const tableColumns = ["Name", "Email", "Profile"];
 const userService = new UserService();
@@ -36,7 +37,7 @@ export default {
       await userService.getAll()
         .then(response => {
           if (response.status)
-            this.users = response.data;
+            this.users = response.data.filter(user => user.id != loggedUserId);
         });
     }
   },
