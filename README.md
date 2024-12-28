@@ -1,30 +1,27 @@
-
-# Auth WEB 2.0
+# Auth WEB Beta
 
 The project uses a Single Page Application (SPA) architecture and is built based on a component-driven structure.
 
-# :computer: Technologies
+## Technologies
 
-:small_blue_diamond: [Vue](https://vuejs.org/)
+* Vue
 
-# :memo: Functionalities
+## Functionalities
 
-:heavy_check_mark: Authentication
+* Authentication
+* Manage users
+* Manage profiles
 
-:heavy_check_mark: Manage users
-
-:heavy_check_mark: Manage profiles
-
-# :arrow_forward: Run
+## Run
 
 Clone the project:
 ```bash
-git clone https://github.com/diogoandrad/auth-web-2.0.git
+git clone https://github.com/diogoandrad/auth-web-beta.git
 ```
 
 Enter the project folder:
 ```bash
-cd auth-web-2.0
+cd auth-web-beta
 ```
 
 Install dependencies:
@@ -37,9 +34,10 @@ Run the application:
 npm run dev
 ```
 
-Access: http://localhost:8080/
-
-# :closed_book: License
+## Author
 
 Built by [Diogo Andrade](https://github.com/diogoandrad).
+
+## License
+
 This project is on [MIT license](./LICENSE).
